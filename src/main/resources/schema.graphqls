@@ -6,3 +6,7 @@ type Link {
 type Query {
     allLinks: [Link]
 }
+
+schema {
+    query: Query
+}
