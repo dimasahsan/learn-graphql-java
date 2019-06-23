@@ -6,6 +6,10 @@ public class Link {
     private final String url;
     private final String description;
 
+    public Link(String url, String description) {
+        this(null, url, description);
+    }
+
     public Link(String id, String url, String description) {
         this.id = id;
         this.url = url;
@@ -15,7 +19,7 @@ public class Link {
     public String getId() {
         return id;
     }
-    
+
     public String getUrl() {
         return url;
     }
