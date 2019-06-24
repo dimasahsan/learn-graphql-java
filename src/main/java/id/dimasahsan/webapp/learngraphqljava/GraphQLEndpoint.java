@@ -36,7 +36,8 @@ public class GraphQLEndpoint extends SimpleGraphQLServlet {
                 .resolvers(
                         new Query(linkRepository),
                         new Mutation(linkRepository, userRepository),
-                        new SignInResolver())
+                        new SignInResolver(),
+                        new LinkResolver(userRepository))
                 .build()
                 .makeExecutableSchema();
     }
