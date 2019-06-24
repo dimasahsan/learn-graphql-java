@@ -1,8 +1,9 @@
 package id.dimasahsan.webapp.learngraphqljava;
 
-import com.coxautodev.graphql.tools.GraphQLRootResolver;
+import com.coxautodev.graphql.tools.GraphQLMutationResolver;
+import graphql.GraphQLException;
 
-public class Mutation implements GraphQLRootResolver {
+public class Mutation implements GraphQLMutationResolver {
 
     private final LinkRepository linkRepository;
     private final UserRepository userRepository;
@@ -21,5 +22,13 @@ public class Mutation implements GraphQLRootResolver {
     public User createUser(String name, AuthData auth) {
         User newUser = new User(name, auth.getEmail(), auth.getPassword());
         return userRepository.saveUser(newUser);
+    }
+
+    public SignInPayload signInUser(AuthData auth) {
+        User user = userRepository.findByEmail(auth.getEmail());
+        if (user.getPassword().equals(auth.getPassword())) {
+            return new SignInPayload(user.getId(), user);
+        }
+        throw new GraphQLException("Invalid credentials");
     }
 }
