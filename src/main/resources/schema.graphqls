@@ -25,7 +25,7 @@ type User {
     password: String
 }
 
-Input AuthData {
+input AuthData {
     email: String!
     password: String!
 }
