@@ -2,6 +2,7 @@ package id.dimasahsan.webapp.learngraphqljava;
 
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import graphql.GraphQLException;
+import graphql.schema.DataFetchingEnvironment;
 
 public class Mutation implements GraphQLMutationResolver {
 
@@ -13,10 +14,10 @@ public class Mutation implements GraphQLMutationResolver {
         this.userRepository = userRepository;
     }
 
-    public Link createLink(String url, String description) {
-        Link newLink = new Link(url, description);
-        linkRepository.saveLink(newLink);
-        return newLink;
+    public Link createLink(String url, String description, DataFetchingEnvironment env) {
+        AuthContext context = env.getContext();
+        Link newLink = new Link(url, description, context.getUser().getId());
+        return linkRepository.saveLink(newLink);
     }
 
     public User createUser(String name, AuthData auth) {

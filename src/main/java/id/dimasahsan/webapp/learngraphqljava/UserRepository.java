@@ -2,6 +2,7 @@ package id.dimasahsan.webapp.learngraphqljava;
 
 import com.mongodb.client.MongoCollection;
 import org.bson.Document;
+import org.bson.types.ObjectId;
 
 import static com.mongodb.client.model.Filters.eq;
 
@@ -19,7 +20,7 @@ public class UserRepository {
     }
 
     public User findById(String id) {
-        Document doc = users.find(eq("_id")).first();
+        Document doc = users.find(eq("_id", new ObjectId(id))).first();
         return user(doc);
     }
 
@@ -29,10 +30,7 @@ public class UserRepository {
         doc.append("email", user.getEmail());
         doc.append("password", user.getPassword());
         users.insertOne(doc);
-        return new User(doc.get("_id").toString(),
-                user.getName(),
-                user.getEmail(),
-                user.getPassword());
+        return user(doc);
     }
 
     private User user(Document doc) {
