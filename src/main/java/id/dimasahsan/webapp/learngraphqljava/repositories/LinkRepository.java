@@ -1,5 +1,6 @@
 package id.dimasahsan.webapp.learngraphqljava.repositories;
 
+import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import id.dimasahsan.webapp.learngraphqljava.models.Link;
 import id.dimasahsan.webapp.learngraphqljava.models.LinkFilter;
@@ -27,10 +28,11 @@ public class LinkRepository {
         return link(doc);
     }
 
-    public List<Link> getAllLinks(LinkFilter filter) {
+    public List<Link> getAllLinks(LinkFilter filter, int skip, int first) {
         Optional<Bson> mongoFilter = Optional.ofNullable(filter).map(this::buildFilter);
         List<Link> allLinks = new ArrayList<>();
-        for (Document doc : mongoFilter.map(links::find).orElseGet(links::find)) {
+        FindIterable<Document> documents = mongoFilter.map(links::find).orElseGet(links::find);
+        for (Document doc : documents.skip(skip).limit(first)) {
             allLinks.add(link(doc));
         }
         return allLinks;
