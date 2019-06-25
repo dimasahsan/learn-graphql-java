@@ -6,6 +6,13 @@ import com.mongodb.client.MongoDatabase;
 import graphql.schema.GraphQLSchema;
 import graphql.servlet.GraphQLContext;
 import graphql.servlet.SimpleGraphQLServlet;
+import id.dimasahsan.webapp.learngraphqljava.models.User;
+import id.dimasahsan.webapp.learngraphqljava.repositories.LinkRepository;
+import id.dimasahsan.webapp.learngraphqljava.repositories.UserRepository;
+import id.dimasahsan.webapp.learngraphqljava.repositories.VoteRepository;
+import id.dimasahsan.webapp.learngraphqljava.resolvers.LinkResolver;
+import id.dimasahsan.webapp.learngraphqljava.resolvers.SignInResolver;
+import id.dimasahsan.webapp.learngraphqljava.resolvers.VoteResolver;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;

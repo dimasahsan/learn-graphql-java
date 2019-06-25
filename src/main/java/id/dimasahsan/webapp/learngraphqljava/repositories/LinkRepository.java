@@ -1,6 +1,7 @@
-package id.dimasahsan.webapp.learngraphqljava;
+package id.dimasahsan.webapp.learngraphqljava.repositories;
 
 import com.mongodb.client.MongoCollection;
+import id.dimasahsan.webapp.learngraphqljava.models.Link;
 import org.bson.Document;
 import org.bson.types.ObjectId;
 

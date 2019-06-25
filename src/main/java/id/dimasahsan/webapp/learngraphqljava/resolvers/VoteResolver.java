@@ -1,6 +1,11 @@
-package id.dimasahsan.webapp.learngraphqljava;
+package id.dimasahsan.webapp.learngraphqljava.resolvers;
 
 import com.coxautodev.graphql.tools.GraphQLResolver;
+import id.dimasahsan.webapp.learngraphqljava.models.Link;
+import id.dimasahsan.webapp.learngraphqljava.models.User;
+import id.dimasahsan.webapp.learngraphqljava.models.Vote;
+import id.dimasahsan.webapp.learngraphqljava.repositories.LinkRepository;
+import id.dimasahsan.webapp.learngraphqljava.repositories.UserRepository;
 
 public class VoteResolver implements GraphQLResolver<Vote> {
 

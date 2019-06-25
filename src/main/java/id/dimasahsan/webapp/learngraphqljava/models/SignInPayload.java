@@ -1,4 +1,6 @@
-package id.dimasahsan.webapp.learngraphqljava;
+package id.dimasahsan.webapp.learngraphqljava.models;
+
+import id.dimasahsan.webapp.learngraphqljava.models.User;
 
 public class SignInPayload {
 

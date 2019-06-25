@@ -3,6 +3,10 @@ package id.dimasahsan.webapp.learngraphqljava;
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import graphql.GraphQLException;
 import graphql.schema.DataFetchingEnvironment;
+import id.dimasahsan.webapp.learngraphqljava.models.*;
+import id.dimasahsan.webapp.learngraphqljava.repositories.LinkRepository;
+import id.dimasahsan.webapp.learngraphqljava.repositories.UserRepository;
+import id.dimasahsan.webapp.learngraphqljava.repositories.VoteRepository;
 
 import java.time.Instant;
 import java.time.ZoneOffset;

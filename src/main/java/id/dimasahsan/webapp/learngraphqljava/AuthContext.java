@@ -1,6 +1,7 @@
 package id.dimasahsan.webapp.learngraphqljava;
 
 import graphql.servlet.GraphQLContext;
+import id.dimasahsan.webapp.learngraphqljava.models.User;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

@@ -1,4 +1,4 @@
-package id.dimasahsan.webapp.learngraphqljava;
+package id.dimasahsan.webapp.learngraphqljava.models;
 
 public class User {
 

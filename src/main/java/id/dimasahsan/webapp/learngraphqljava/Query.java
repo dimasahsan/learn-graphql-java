@@ -1,6 +1,8 @@
 package id.dimasahsan.webapp.learngraphqljava;
 
 import com.coxautodev.graphql.tools.GraphQLRootResolver;
+import id.dimasahsan.webapp.learngraphqljava.models.Link;
+import id.dimasahsan.webapp.learngraphqljava.repositories.LinkRepository;
 
 import java.util.List;
 
